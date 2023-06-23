@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+  
+    var date = DateTime.Now;
+    var isEvenMinute = date.Minute % 2 == 0;
+    var dateStr = date.ToString("s");
+ 
+}
+
+<div class="text-center"">
+    <h3 class="display-4">Hello and Welcome!</h3>
+    <p>Welcome to the WebApp portion of the homework assignment.  For directions, please consult the README.md</p>
+    <hr /> 
+    
+    <div>
+        <h4> <i>@dateStr</i> </h4>
+    </div>
+
+     @if(isEvenMinute) {
+           <i>@Html.ActionLink("Event Minute", "EvenMinute", "Other" )</i>
+      } else {
+           <i>Link goes here when the minute is even.</i>
+      }
+   
+    <hr />
+    <div>
+        Thank you for very much for taking the time to complete this part of the homework assignment!
+    </div>
+</div>
